@@ -1,6 +1,7 @@
 ---
 /** biome-ignore-all lint/correctness/noUnusedImports: <> */
 import PokemonCard from "@components/pokemons/PokemonCard.astro";
+import Title from "@components/shared/Title.astro";
 import type { PokemonsListResponse } from "@interfaces/pokemons-list.response";
 import MainLayout from "@layouts/MainLayout.astro";
 
@@ -11,9 +12,7 @@ console.log(data);
 ---
 
 <MainLayout title="Pokemon Static | Home">
-	<h1 class="text-3xl">Pokemons List</h1>
-
-	<hr />
+	<Title>Pokemons List</Title>
 
 	<section
 		aria-label="Pokemons List"

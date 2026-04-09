@@ -76,12 +76,7 @@ const audioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pok
 </style>
 
 <script>
-  import { locales } from "astro:schema";
-
-  interface FavoritePokemon {
-    name: string;
-    id: number;
-  }
+  import type { FavoritePokemon } from "@interfaces/favorite-pokemon";
 
   const handlePageLoad = () => {
     let favoritesPokemons: FavoritePokemon[] = JSON.parse(

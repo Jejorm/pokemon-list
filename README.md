@@ -1,43 +1,72 @@
-# Astro Starter Kit: Minimal
+# Pokemon Static | Astro v6
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+Una aplicación web estática (SSG) de Pokémon construida con **Astro v6**, diseñada para demostrar el poder de la **Arquitectura de Islas**, **View Transitions** y la velocidad de los sitios generados estáticamente.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Pokemon Static Preview](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png)
 
-## 🚀 Project Structure
+## 🚀 Características principales
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Static Site Generation (SSG):** Todo el sitio se genera de forma estática para un rendimiento máximo.
+- **Arquitectura de Islas:** Uso estratégico de **SolidJS** para componentes interactivos (Favoritos) solo donde es necesario.
+- **View Transitions:** Navegación fluida y moderna entre páginas utilizando la API nativa de Astro.
+- **Paginación dinámica:** Listado completo de Pokémon con sistema de paginación funcional (`/pokemons/[page]`).
+- **Rutas dinámicas:** Páginas de detalle generadas por nombre (`/pokemons/[name]`) y por ID (`/pokemon/[id]`).
+- **Sistema de Favoritos:** Persistencia en el cliente para marcar y desmarcar Pokémon favoritos.
+- **Optimización de imágenes:** Uso de los componentes de imagen nativos de Astro.
+
+## 🛠️ Tecnologías utilizadas
+
+- **Framework:** [Astro v6](https://astro.build/)
+- **Librería de UI (Islas):** [SolidJS](https://www.solidjs.com/)
+- **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Iconografía:** [astro-icon](https://github.com/natemoo-re/astro-icon)
+- **Lenguaje:** TypeScript
+- **API:** [PokeAPI](https://pokeapi.co/)
+
+## 📦 Instalación y Desarrollo
+
+Para ejecutar este proyecto localmente, seguí estos pasos:
+
+1. Cloná el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/02-pokemon-static.git
+   ```
+
+2. Instalá las dependencias (se recomienda pnpm):
+   ```bash
+   pnpm install
+   ```
+
+3. Iniciá el servidor de desarrollo:
+   ```bash
+   pnpm dev
+   ```
+
+4. Abrí [http://localhost:4321](http://localhost:4321) en tu navegador.
+
+## 🏗️ Comandos disponibles
+
+| Comando | Acción |
+| :--- | :--- |
+| `pnpm dev` | Inicia el entorno de desarrollo local. |
+| `pnpm build` | Compila el proyecto para producción (genera la carpeta `dist/`). |
+| `pnpm preview` | Previsualiza localmente la compilación de producción. |
+| `pnpm astro ...` | Ejecuta comandos directos de la CLI de Astro. |
+
+## 📂 Estructura del Proyecto
 
 ```text
 /
-├── public/
+├── public/              # Archivos estáticos
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/      # Componentes (Astro y SolidJS)
+│   ├── consts/          # Configuraciones globales
+│   ├── interfaces/      # Tipado de TypeScript
+│   ├── layouts/         # Plantillas base (MainLayout)
+│   ├── pages/           # Sistema de rutas basado en archivos
+│   └── styles/          # Estilos globales (Tailwind)
+└── astro.config.mjs     # Configuración de Astro e integraciones
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+Proyecto desarrollado como parte del curso de Astro en [DevTalles](https://devtalles.com/).
